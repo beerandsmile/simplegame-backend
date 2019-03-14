@@ -17,14 +17,14 @@ Route::prefix('/v1')->group(function() {
     Route::post('login', 'Api\AuthController@login');
 
     Route::middleware('token')->group(function() {
-        Route::get('/games', 'Global\Api\GameController@list');
+        Route::get('/games', 'Api\GameController@list');
 
-        Route::post('/games', 'Global\Api\GameController@create');
+        Route::post('/games', 'Api\GameController@create');
 
-        Route::get('/games/{hash}', 'Global\Api\GameController@game');
+        Route::get('/games/{hash}', 'Api\GameController@game');
 
-        Route::post('/games/{hash}', 'Global\Api\GameController@move');
+        Route::post('/games/{hash}', 'Api\GameController@move');
 
-        Route::get('/users', 'Global\Api\UserController@list');
+        Route::get('/users', 'Api\UserController@list');
     });
 });
